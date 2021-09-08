@@ -44,7 +44,7 @@ client.login(process.env.DISCORD_BOT_TOKEN)
 
 const PORT = process.env.PORT || 5000
 
-app.listen({ PORT }, () => {
+app.listen(PORT, () => {
   console.log(`🚀 the server is blasing off!`);
 });
 
