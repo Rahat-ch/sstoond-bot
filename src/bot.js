@@ -1,8 +1,10 @@
 require('dotenv').config();
+const express = require("express")
 const { Client } = require("discord.js");
 const wd = require("word-definition");
 const ud = require("urban-dictionary");
 
+const app = express();
 const client = new Client();
 
 client.once('ready', () => {
@@ -39,6 +41,12 @@ client.on('message', async (message) => {
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN)
+
+const PORT = process.env.PORT || 5000
+
+app.listen({ PORT }, () => {
+  console.log(`🚀 the server is blasing off!`);
+});
 
 
 
