@@ -39,7 +39,7 @@ client.on('message', async (message) => {
             const word = wordArray[i];
             const result = await ud.define(word).catch(async err => {
                 const secondCheck = await requestWrapper(word)
-                if(secondCheck.err == 'not found') urbanResults.push(word)
+                if(secondCheck.err == 'not found' && word !== "lolijam") urbanResults.push(word)
             })
             if (result) console.log('got result for:', word)
         }
